@@ -1,0 +1,6 @@
+__pycache__/
+lambda_package/
+lambda_function.zip
+terraform.tfstate*
+.terraform/
+*.zip

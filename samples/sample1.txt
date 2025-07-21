@@ -1,0 +1,3 @@
+Hello, my name is John.
+I would like to have this document translated into French.
+Thank you.
