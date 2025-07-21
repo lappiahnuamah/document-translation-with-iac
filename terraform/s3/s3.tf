@@ -18,3 +18,13 @@ resource "aws_s3_bucket_notification" "notify_lambda" {
 
   depends_on = [aws_lambda_permission.allow_s3]
 }
+
+
+resource "aws_lambda_permission" "allow_s3" {
+  statement_id  = "AllowS3Invoke"
+  action        = "lambda:InvokeFunction"
+  function_name = var.lambda_function_arn
+  principal     = "s3.amazonaws.com"
+  source_arn    = aws_s3_bucket.input_bucket.arn
+}
+

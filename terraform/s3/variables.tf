@@ -9,4 +9,6 @@ variable "s3_input_bucket" {
   type        = string
 }
 
-variable "lambda_function_arn" {}
+variable "lambda_function_arn" {
+  description = "ARN of the Lambda function to be triggered"
+}
