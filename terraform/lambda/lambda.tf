@@ -23,3 +23,4 @@ resource "aws_lambda_permission" "allow_s3" {
   principal = "s3.amazonaws.com"
   source_arn = var.input_bucket_arn
 }
+
