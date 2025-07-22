@@ -1,5 +1,5 @@
 provider "aws" {
-  region = var.region
+  region = var.aws_region
 }
 
 module "iam" {
@@ -14,7 +14,6 @@ module "lambda" {
   lambda_role_arn   = module.iam.lambda_role_arn
   output_bucket     = var.s3_output_bucket
   function_name     = var.lambda_function_name
-  
   runtime           = var.lambda_runtime
 }
 
@@ -24,7 +23,5 @@ module "s3" {
   s3_output_bucket      = var.s3_output_bucket
   lambda_function_arn   = module.lambda.lambda_function_arn
 }
-
-
 
 
