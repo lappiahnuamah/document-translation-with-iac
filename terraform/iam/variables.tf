@@ -1,3 +1,19 @@
-variable "project_prefix" {}
-variable "s3_input_bucket" {}
-variable "s3_output_bucket" {}
+# variable "project_prefix" {}
+
+variable "project_prefix" {
+  description = "Prefix for project resources"
+  type        = string
+  default     = "myproject"
+}
+
+
+variable "input_bucket" {
+  description = "Name of input S3 bucket"
+  type        = string
+}
+
+
+variable "output_bucket" {
+  description = "Name of output S3 bucket"
+  type        = string
+}

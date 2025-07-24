@@ -1,5 +1,5 @@
-resource "aws_iam_role" "lambda_exec_role" {
-  name = "${var.project_prefix}-lambda-role"
+resource "aws_iam_role" "lambda_exec" {
+  name = "lambda-exec-role"
   assume_role_policy = jsonencode({
     Version="2012-10-17",
     Statement=[{
@@ -23,7 +23,7 @@ resource "aws_iam_policy" "lambda_policy" {
       {
         Effect="Allow",
         Action=[ "s3:GetObject", "s3:PutObject" ],
-        Resource=["arn:aws:s3:::${var.s3_input_bucket}/*", "arn:aws:s3:::${var.s3_output_bucket}/*"]
+        Resource=["arn:aws:s3:::${var.input_bucket}/*", "arn:aws:s3:::${var.output_bucket}/*"]
       },
       {
         Effect="Allow",
@@ -35,6 +35,6 @@ resource "aws_iam_policy" "lambda_policy" {
 }
 
 resource "aws_iam_role_policy_attachment" "attach_exec_policy" {
-  role = aws_iam_role.lambda_exec_role.name
+  role = aws_iam_role.lambda_exec.name
   policy_arn = aws_iam_policy.lambda_policy.arn
 }

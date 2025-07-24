@@ -1,14 +1,15 @@
-variable "s3_output_bucket" {
-  description = "Name of the output bucket"
+variable "input_bucket" {
+  description = "Name of the input S3 bucket"
   type        = string
+  default     = "myproject-input-bucket"
 }
-
-
-variable "s3_input_bucket" {
-  description = "Name of the input bucket"
+variable "output_bucket" {
+  description = "Name of the output S3 bucket"
   type        = string
+  default     = "myproject-output-bucket"
 }
+variable "lambda_arn" {}
 
-variable "lambda_function_arn" {
-  description = "ARN of the Lambda function to be triggered"
-}
+variable "function_name" {}
+
+
