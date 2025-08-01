@@ -1,10 +1,10 @@
 # variables.tf (at root level)
 
 variable "region" {
-    default = "us-east-2"
+  default = "us-east-2"
 }
 variable "project_prefix" {
-    default = "myproject"
+  default = "myproject"
 }
 # variable "input_bucket" {}
 # variable "output_bucket" {}
@@ -15,19 +15,26 @@ variable "lambda_runtime" {
   default     = "python3.9"
 }
 
-variable "input_bucket" {
+variable "bucket" {
   description = "Name of the input S3 bucket"
   type        = string
-  default     = "myproject-input-bucket"
+  default     = "myproject-input-bucket-law1223jj"
 }
+
 variable "output_bucket" {
   description = "Name of the output S3 bucket"
   type        = string
-  default     = "myproject-output-bucket"
+  default     = "myproject-output-bucket-law189888kk"
 }
 
 variable "function_name" {
   description = "The name of the Lambda function"
   type        = string
   default     = "translation_doc"
+}
+
+variable "handler" {
+  description = "Lambda handler"
+  type        = string
+  default     = "lambda_function.lambda_handler"
 }

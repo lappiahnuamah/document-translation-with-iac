@@ -7,7 +7,7 @@ variable "project_prefix" {
 }
 
 
-variable "input_bucket" {
+variable "bucket" {
   description = "Name of input S3 bucket"
   type        = string
 }
